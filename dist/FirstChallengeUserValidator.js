@@ -9,7 +9,6 @@ class ValidationError extends Error {
     }
 }
 exports.ValidationError = ValidationError;
-;
 class UserValidator {
     static validate(user) {
         let errors = [];

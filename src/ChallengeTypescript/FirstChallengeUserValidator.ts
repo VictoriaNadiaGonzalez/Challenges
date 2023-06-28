@@ -1,5 +1,4 @@
-
-import { User } from "./User";
+import { User } from "./FirstChallengeUser";
 
 export class ValidationError extends Error {
   constructor(errors: string[]) {
@@ -7,10 +6,10 @@ export class ValidationError extends Error {
     super(`${message}\n${errors.join("\n")}`);
     this.name = "ValidationError";
   }
-};
+}
 
 export class UserValidator {
-  public static validate(user: User){
+  public static validate(user: User) {
     let errors: string[] = [];
 
     if (!user.name || user.name.trim() === "") {
@@ -25,10 +24,11 @@ export class UserValidator {
       errors.push("Password must be at least 8 characters long");
     }
 
-    if( errors.length > 0){
-      throw new ValidationError(errors)
-    } {
-      return true
+    if (errors.length > 0) {
+      throw new ValidationError(errors);
+    }
+    {
+      return true;
     }
   }
 }
@@ -38,8 +38,6 @@ function validateEmail(email: string): boolean {
   return emailRegex.test(email);
 }
 
-
-
 // Explanation of the regular expression
 // ^ indicates the start of the string.
 // [^\s@]+ represents one or more characters that are not whitespace or the @ symbol. This ensures that there is at least one character before the @ symbol.
@@ -48,4 +46,3 @@ function validateEmail(email: string): boolean {
 // . is the literal dot in the email domain. We use the backslash \ to escape the special character . and treat it as a literal character in the regular expression.
 // [^\s@]+ once again represents one or more characters that are not whitespace or the @ symbol. This ensures that there is at least one character after the dot . in the domain of the email.
 // $ indicates the end of the string.
-
