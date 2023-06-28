@@ -1,6 +1,6 @@
 import { User } from "./FirstChallengeUser";
 import { UserValidator } from "./FirstChallengeUserValidator";
-import { UserRepository } from "./FirstChallngeUserRepository";
+import { UserRepository } from "../SecondChallenge/FirstChallngeUserRepository";
 
 const user = new User("", "email", "pass");
 

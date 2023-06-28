@@ -1,4 +1,4 @@
-import { User } from "./FirstChallengeUser";
+import { User } from "../FirstChallenge/FirstChallengeUser";
 import prisma from "./prisma";
 
 export class UserRepository {
