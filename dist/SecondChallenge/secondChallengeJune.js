@@ -17,12 +17,11 @@ function findPairWithSum(array, targetSum) {
         const arrayWithoutDuplicates = new Set(array);
         const arrayConverted = [...arrayWithoutDuplicates];
         const foundPair = arrayConverted.find((num, index) => {
-            const difference = targetSum - num; //calculates difference between actual number and target
+            const difference = targetSum - num;
             return arrayConverted
                 .slice(index + 1)
-                .some((otherNum) => otherNum === difference); //using some to find a number equal than the difference
+                .some((otherNum) => otherNum === difference);
         });
-        // if u can find a pair of numbers return the pair, else return an empty array
         return foundPair ? [foundPair, targetSum - foundPair] : [];
     }
 }
@@ -31,7 +30,6 @@ const arrayEmpty = [];
 const array = [2, 5, -15, 25];
 const arrayWithoutPair = [2, 4, 5, 3];
 const targetSum = 10;
-// Salida de ejemplo: [-1, 11] // los números podrían estar en orden inversos
 // console.log(findPairWithSum(arrayEmpty, targetSum)); //error
 console.log(findPairWithSum(array, targetSum)); //  [ -15, 25 ]
 console.log(findPairWithSum(arrayWithoutPair, targetSum)); // []
